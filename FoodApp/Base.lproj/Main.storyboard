@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H3f-jM-wZG">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eed-zG-jMg">
+                                    <size key="itemSize" width="145" height="145"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="4hM-O0-bH6" customClass="CVCell" customModule="FoodApp" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="145" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYB-Gz-KOV">
+                                                    <rect key="frame" x="0.0" y="118" width="145" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="strawberry_ice_cream" translatesAutoresizingMaskIntoConstraints="NO" id="iXK-po-7y7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="145" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="145" id="620-bx-euW"/>
+                                                        <constraint firstAttribute="height" constant="110" id="W05-vh-sSS"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="iXK-po-7y7" firstAttribute="leading" secondItem="4hM-O0-bH6" secondAttribute="leading" id="0qu-yE-f6s"/>
+                                            <constraint firstItem="cYB-Gz-KOV" firstAttribute="leading" secondItem="4hM-O0-bH6" secondAttribute="leading" id="5zr-eU-7SN"/>
+                                            <constraint firstAttribute="trailing" secondItem="iXK-po-7y7" secondAttribute="trailing" id="Jf0-LH-EaZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="cYB-Gz-KOV" secondAttribute="trailing" id="R6y-F0-7E2"/>
+                                            <constraint firstAttribute="bottom" secondItem="cYB-Gz-KOV" secondAttribute="bottom" id="S1Y-bV-TAK"/>
+                                            <constraint firstItem="cYB-Gz-KOV" firstAttribute="top" secondItem="iXK-po-7y7" secondAttribute="bottom" constant="8" id="ZP0-ag-7bw"/>
+                                            <constraint firstItem="iXK-po-7y7" firstAttribute="top" secondItem="4hM-O0-bH6" secondAttribute="top" id="gS5-Ba-P7g"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="la_Image" destination="iXK-po-7y7" id="Ru0-A3-Z4R"/>
+                                            <outlet property="la_Name" destination="cYB-Gz-KOV" id="m9w-7y-rgt"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="FqW-3W-S9M"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Qo6-GR-ErW"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="H3f-jM-wZG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aKj-Vk-bK4"/>
+                            <constraint firstItem="H3f-jM-wZG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bUH-Y0-UPx"/>
+                            <constraint firstItem="H3f-jM-wZG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cJg-et-7kX"/>
+                            <constraint firstItem="H3f-jM-wZG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="ftC-CD-nLQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="CollectionViewList" destination="H3f-jM-wZG" id="dWJ-QF-dsx"/>
+                        <segue destination="Es1-Jl-Cuk" kind="show" identifier="ShowDetails" id="O9r-Sg-Kry"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114.375" y="115"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="2xf-mp-C9O">
+            <objects>
+                <viewController id="Es1-Jl-Cuk" customClass="ViewController2" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vVF-hZ-Hkt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ntb-AV-4R1">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="nSD-K7-qHw">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="536-v0-jeM">
+                                            <connections>
+                                                <action selector="bu_Back:" destination="Es1-Jl-Cuk" id="iKw-m8-WIa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULL-ar-KXd">
+                                <rect key="frame" x="16" y="219" width="288" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="strawberry_ice_cream" translatesAutoresizingMaskIntoConstraints="NO" id="Stw-lD-cPd">
+                                <rect key="frame" x="16" y="72" width="288" height="139"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ah3-ds-pDv">
+                                <rect key="frame" x="16" y="269" width="288" height="191"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ntb-AV-4R1" firstAttribute="top" secondItem="vVF-hZ-Hkt" secondAttribute="top" constant="20" id="6ie-wt-Iit"/>
+                            <constraint firstItem="ULL-ar-KXd" firstAttribute="top" secondItem="Stw-lD-cPd" secondAttribute="bottom" constant="8" id="AcF-1C-Jmk"/>
+                            <constraint firstItem="ah3-ds-pDv" firstAttribute="leading" secondItem="J3h-La-bJa" secondAttribute="leading" constant="16" id="HLu-tg-OGl"/>
+                            <constraint firstItem="J3h-La-bJa" firstAttribute="trailing" secondItem="Ntb-AV-4R1" secondAttribute="trailing" id="Ka3-WC-2gS"/>
+                            <constraint firstItem="ULL-ar-KXd" firstAttribute="leading" secondItem="J3h-La-bJa" secondAttribute="leading" constant="16" id="NOT-DH-SKy"/>
+                            <constraint firstItem="J3h-La-bJa" firstAttribute="trailing" secondItem="Stw-lD-cPd" secondAttribute="trailing" constant="16" id="Q0O-Ar-AJY"/>
+                            <constraint firstItem="J3h-La-bJa" firstAttribute="trailing" secondItem="ah3-ds-pDv" secondAttribute="trailing" constant="16" id="Qgo-CF-0pq"/>
+                            <constraint firstItem="Stw-lD-cPd" firstAttribute="leading" secondItem="J3h-La-bJa" secondAttribute="leading" constant="16" id="RJI-ze-dUM"/>
+                            <constraint firstItem="J3h-La-bJa" firstAttribute="trailing" secondItem="ULL-ar-KXd" secondAttribute="trailing" constant="16" id="ScY-fV-49q"/>
+                            <constraint firstItem="Stw-lD-cPd" firstAttribute="centerX" secondItem="vVF-hZ-Hkt" secondAttribute="centerX" id="V0Q-Gw-fhC"/>
+                            <constraint firstItem="ah3-ds-pDv" firstAttribute="top" secondItem="ULL-ar-KXd" secondAttribute="bottom" constant="8" id="V1s-QX-q98"/>
+                            <constraint firstItem="Ntb-AV-4R1" firstAttribute="leading" secondItem="J3h-La-bJa" secondAttribute="leading" id="hAi-At-NMe"/>
+                            <constraint firstItem="J3h-La-bJa" firstAttribute="bottom" secondItem="ah3-ds-pDv" secondAttribute="bottom" constant="20" id="izP-Hs-0LE"/>
+                            <constraint firstItem="ULL-ar-KXd" firstAttribute="centerY" secondItem="vVF-hZ-Hkt" secondAttribute="centerY" id="tP2-hp-VPZ"/>
+                            <constraint firstItem="Stw-lD-cPd" firstAttribute="top" secondItem="Ntb-AV-4R1" secondAttribute="bottom" constant="8" id="w3s-Kz-A8u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J3h-La-bJa"/>
+                    </view>
+                    <connections>
+                        <outlet property="la_Des" destination="ah3-ds-pDv" id="oyu-uk-8jn"/>
+                        <outlet property="la_Image" destination="Stw-lD-cPd" id="EhP-fb-9EN"/>
+                        <outlet property="la_Name" destination="ULL-ar-KXd" id="oFj-ox-NCN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pmz-Or-11e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802.5" y="115"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="strawberry_ice_cream" width="100" height="100"/>
+    </resources>
+</document>
